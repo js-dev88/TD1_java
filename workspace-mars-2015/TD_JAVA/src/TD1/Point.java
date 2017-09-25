@@ -49,6 +49,12 @@ public class Point {
 		return this.isSameAs((Point)obj) == true;
 	}
 	
+	public void translate(int dx, int dy){
+		this.x += dx;
+		this.y += dy;
+		
+	}
+	
 	public static void main(String[] args) {
 		/*int i = Point.getCompteur();
 		System.out.println(i);

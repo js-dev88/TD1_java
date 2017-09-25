@@ -8,7 +8,7 @@ public class LigneBrisée {
 	private LinkedList<Point> tableauPoint;
 	private int index = 0;
 	
-	public LigneBrisée(int capacite) {
+	public LigneBrisée(/*int capacite*/) {
 		this.tableauPoint = new LinkedList<Point>();
 	}
 	
@@ -23,26 +23,36 @@ public class LigneBrisée {
 		
 	}
 	
-	public int pointCapacity(){
-		return tableauPoint.length;
-	}
+	/*public int pointCapacity(){
+		return tableauPoint.size();
+	}*/
 	
 	public int nbPoints(){
-		return index+1;
+		//return index+1;
+		return tableauPoint.size();
 	}
 	
 	public boolean contains(Point p){
-		Boolean bool = false;
+		/*Boolean bool = false;
 		for(Point point: tableauPoint){
 			if(p.equals(point)){
 				bool = true;
 			}
 		}
-		return bool;
+		return bool;*/
+		return tableauPoint.contains(p);
 	}
 	
 	public static void main(String[] args) {
-	  
+	   Point p1 = new Point(5,4);
+	   Point p2 = p1;
+	   Point p3 = new Point(5,4);
+	   LigneBrisée lb = new LigneBrisée();
+	   lb.add(p1);
+	   lb.contains(p1);
+	   System.out.println(lb.contains(p1));
+	   System.out.println(lb.contains(p2));
+	   System.out.println(lb.contains(p3));
 	}
 	
 }
